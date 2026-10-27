@@ -33,6 +33,9 @@
     .intro p { margin:0 0 20px; }
     .closing { border-left:3px solid var(--gold); padding:10px 0 10px 22px; margin-top:29px; color:var(--forest); font-weight:600; }
     .note { margin-top:48px; padding:20px 24px; background:#f0f2e9; border-radius:10px; color:var(--muted); font-size:14px; }
+    .products { max-width:1020px; margin:0 auto; padding:8px 24px 76px; text-align:center; }
+    .products h2 { color:var(--forest); font-size:clamp(24px,3.2vw,33px); line-height:1.4; margin:0 0 25px; }
+    .products img { display:block; width:100%; height:auto; border-radius:14px; box-shadow:0 12px 34px rgba(25,56,46,.12); }
     footer { background:var(--deep); color:#f4f2e8; text-align:center; padding:26px 20px; font-size:13px; }
     footer span { color:#dbc59c; }
     [hidden] { display:none !important; }
@@ -87,6 +90,11 @@
       <div class="note">Our website is under development. Product information and ordering will be added later.</div>
     </section>
   </main>
+  <section class="products" aria-label="GentleDaily product range">
+    <h2 id="products-title-th" lang="th">ผลิตภัณฑ์ GentleDaily ของเรา</h2>
+    <h2 id="products-title-en" lang="en" hidden>Our GentleDaily Range</h2>
+    <img src="gentledaily-original-golden.jpg" width="1227" height="1282" alt="GentleDaily Original and GentleDaily Golden sachets side by side" loading="lazy" decoding="async">
+  </section>
   <footer>© <span id="year">2026</span> ISAN WELLNESS · <span>Buriram, Thailand</span></footer>
   <script>
     function setLanguage(lang) {
@@ -94,6 +102,8 @@
       const heroTagline = document.getElementById('hero-tagline');
       heroTagline.textContent = lang === 'th' ? 'สุขภาพดีจากแรงบันดาลใจของธรรมชาติ' : 'Healthy Living Inspired by Nature';
       heroTagline.lang = lang;
+      document.getElementById('products-title-th').hidden = lang !== 'th';
+      document.getElementById('products-title-en').hidden = lang !== 'en';
       document.getElementById('thai').hidden = lang !== 'th';
       document.getElementById('english').hidden = lang !== 'en';
       document.getElementById('btn-th').setAttribute('aria-pressed', String(lang === 'th'));
