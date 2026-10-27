@@ -40,6 +40,23 @@
     footer span { color:#dbc59c; }
     [hidden] { display:none !important; }
     @media (max-width:550px) { .header-inner { padding:16px; } .brand { font-size:17px; } .brand-sub { font-size:10px; } .mark { width:46px; height:46px; } .languages button { padding:6px 10px; } .hero-inner { padding:62px 20px; } .main { padding:43px 22px 60px; } .intro { font-size:16px; } }
+
+    /* Version 2: bilingual product descriptions and preparation */
+    .product-details { max-width:1020px; margin:0 auto; padding:0 24px 65px; }
+    .product-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; margin-top:30px; }
+    .product-card { background:var(--paper); border:1px solid #e5e2d7; border-radius:14px; padding:26px; box-shadow:0 5px 18px rgba(25,56,46,.05); }
+    .product-card h3 { color:var(--forest); font-size:25px; margin:0; line-height:1.35; }
+    .product-card .price { color:var(--deep); font-size:25px; font-weight:750; white-space:nowrap; }
+    .product-card .card-head { display:flex; align-items:start; justify-content:space-between; gap:12px; }
+    .product-card .subtitle { color:var(--muted); font-weight:650; margin:10px 0 20px; }
+    .product-card p { margin:0 0 16px; }
+    .product-card .pack { border-top:1px solid #e5e2d7; margin-top:20px; padding-top:15px; font-weight:650; color:var(--forest); }
+    .preparation { max-width:900px; margin:0 auto; padding:0 26px 75px; }
+    .preparation h2 { color:var(--forest); font-size:clamp(24px,3.2vw,33px); }
+    .preparation ol { padding-left:27px; }
+    .preparation li { padding-left:6px; margin-bottom:13px; }
+    .safety { background:#f0f2e9; border-left:4px solid var(--gold); padding:17px 22px; border-radius:6px; margin-top:24px; }
+    @media(max-width:700px) { .product-grid { grid-template-columns:1fr; } .product-card { padding:21px; } }
   </style>
 </head>
 <body>
@@ -95,6 +112,70 @@
     <h2 id="products-title-en" lang="en" hidden>Our GentleDaily Range</h2>
     <img src="gentledaily-original-golden.jpg" width="1227" height="1282" alt="GentleDaily Original and GentleDaily Golden sachets side by side" loading="lazy" decoding="async">
   </section>
+
+  <!-- Version 2: product descriptions and preparation below the twins -->
+  <section class="product-details" aria-label="GentleDaily descriptions">
+    <div class="language-content" data-language="en" lang="en" hidden>
+      <div class="product-grid">
+        <article class="product-card">
+          <div class="card-head"><h3>GentleDaily Original</h3><span class="price">฿490</span></div>
+          <p class="subtitle">Natural powdered dietary fibre supplement</p>
+          <p>GentleDaily Original combines three complementary ingredients: psyllium husk, prebiotic fibre and flaxseed.</p>
+          <p>Carefully formulated for everyday consumption, these ingredients work together to help promote regular bowel movements, support healthy intestinal function and help maintain balance within the intestinal environment, making digestive wellbeing part of your daily routine.</p>
+          <p class="pack">Net weight: 150 g | 30 servings | 5 g per serving</p>
+        </article>
+        <article class="product-card">
+          <div class="card-head"><h3>GentleDaily Golden</h3><span class="price">฿520</span></div>
+          <p class="subtitle">Natural powdered dietary fibre supplement with turmeric</p>
+          <p>GentleDaily Golden contains the same three principal ingredients as Original: psyllium husk, prebiotic fibre and flaxseed, with the addition of natural turmeric.</p>
+          <p>Turmeric contains curcuminoids, plant compounds that have been studied for their antioxidant and anti-inflammatory properties. The Golden formulation incorporates this additional botanical ingredient into a carefully developed daily dietary fibre supplement.</p>
+          <p class="pack">Net weight: 150 g | 30 servings | 5 g per serving</p>
+        </article>
+      </div>
+    </div>
+    <div class="language-content" data-language="th" lang="th">
+      <div class="product-grid">
+        <article class="product-card">
+          <div class="card-head"><h3>GentleDaily Original</h3><span class="price">฿490</span></div>
+          <p class="subtitle">ผลิตภัณฑ์เสริมใยอาหารชนิดผงจากธรรมชาติ</p>
+          <p>GentleDaily Original ผสานส่วนประกอบสามชนิดที่เสริมกัน ได้แก่ ไซเลียมฮัสก์ ใยอาหารพรีไบโอติก และเมล็ดแฟลกซ์</p>
+          <p>สูตรนี้ได้รับการพัฒนาอย่างพิถีพิถันสำหรับการบริโภคทุกวัน โดยส่วนประกอบทำงานร่วมกันเพื่อช่วยส่งเสริมการขับถ่ายอย่างสม่ำเสมอ สนับสนุนการทำงานของลำไส้ และช่วยรักษาสมดุลของสภาพแวดล้อมภายในลำไส้ เพื่อให้การดูแลสุขภาพระบบย่อยอาหารเป็นส่วนหนึ่งของกิจวัตรประจำวัน</p>
+          <p class="pack">น้ำหนักสุทธิ 150 กรัม | 30 หน่วยบริโภค | หน่วยบริโภคละ 5 กรัม</p>
+        </article>
+        <article class="product-card">
+          <div class="card-head"><h3>GentleDaily Golden</h3><span class="price">฿520</span></div>
+          <p class="subtitle">ผลิตภัณฑ์เสริมใยอาหารชนิดผงจากธรรมชาติผสมขมิ้นชัน</p>
+          <p>GentleDaily Golden มีส่วนประกอบหลักสามชนิดเช่นเดียวกับสูตร Original ได้แก่ ไซเลียมฮัสก์ ใยอาหารพรีไบโอติก และเมล็ดแฟลกซ์ พร้อมเพิ่มขมิ้นชันธรรมชาติ</p>
+          <p>ขมิ้นชันมีสารเคอร์คูมินอยด์ ซึ่งเป็นสารประกอบจากพืชที่มีการศึกษาถึงคุณสมบัติต้านอนุมูลอิสระและต้านการอักเสบ สูตร Golden จึงเพิ่มส่วนประกอบจากพืชชนิดนี้ลงในผลิตภัณฑ์เสริมใยอาหารสำหรับการบริโภคประจำวันซึ่งได้รับการพัฒนาอย่างพิถีพิถัน</p>
+          <p class="pack">น้ำหนักสุทธิ 150 กรัม | 30 หน่วยบริโภค | หน่วยบริโภคละ 5 กรัม</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="preparation" aria-label="GentleDaily preparation">
+    <div class="language-content" data-language="en" lang="en" hidden>
+      <h2>How to Prepare GentleDaily</h2>
+      <p>Enjoying GentleDaily as part of your daily routine is simple.</p>
+      <ol>
+        <li><strong>Measure:</strong> Add 5 grams (1 serving) of GentleDaily Original or Golden to a glass containing approximately 300 mL of drinking water.</li>
+        <li><strong>Mix:</strong> Stir thoroughly until the powder is evenly dispersed throughout the water.</li>
+        <li><strong>Drink:</strong> Consume immediately after mixing, before the mixture begins to thicken.</li>
+        <li><strong>Daily use:</strong> Start with 1 serving per day and drink sufficient water throughout the day.</li>
+      </ol>
+      <p class="safety"><strong>Important:</strong> Always mix the powder with an adequate amount of water. Never consume the dry powder directly without mixing it with water.</p>
+    </div>
+    <div class="language-content" data-language="th" lang="th">
+      <h2>วิธีเตรียม GentleDaily</h2>
+      <p>การดื่ม GentleDaily เป็นส่วนหนึ่งของกิจวัตรประจำวันทำได้ง่าย ๆ</p>
+      <ol>
+        <li><strong>ตวง:</strong> เติม GentleDaily Original หรือ Golden 5 กรัม (1 หน่วยบริโภค) ลงในแก้วที่มีน้ำดื่มประมาณ 300 มิลลิลิตร</li>
+        <li><strong>คน:</strong> คนให้ทั่วจนผงกระจายตัวสม่ำเสมอในน้ำ</li>
+        <li><strong>ดื่ม:</strong> ดื่มทันทีหลังผสม ก่อนที่ส่วนผสมจะเริ่มข้นขึ้น</li>
+        <li><strong>การบริโภคประจำวัน:</strong> เริ่มต้นวันละ 1 หน่วยบริโภค และดื่มน้ำให้เพียงพอตลอดวัน</li>
+      </ol>
+      <p class="safety"><strong>ข้อควรระวัง:</strong> ต้องผสมผงกับน้ำในปริมาณที่เพียงพอเสมอ ห้ามรับประทานผงแห้งโดยไม่ผสมน้ำ</p>
+    </div>
+  </section>
   <footer>© <span id="year">2026</span> ISAN WELLNESS · <span>Buriram, Thailand</span></footer>
   <script>
     function setLanguage(lang) {
@@ -108,6 +189,7 @@
       document.getElementById('english').hidden = lang !== 'en';
       document.getElementById('btn-th').setAttribute('aria-pressed', String(lang === 'th'));
       document.getElementById('btn-en').setAttribute('aria-pressed', String(lang === 'en'));
+      document.querySelectorAll('.language-content').forEach(el => { el.hidden = el.dataset.language !== lang; });
       document.documentElement.lang = lang;
     }
     document.getElementById('year').textContent = new Date().getFullYear();
