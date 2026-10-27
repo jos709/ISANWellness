@@ -57,6 +57,17 @@
     .preparation li { padding-left:6px; margin-bottom:13px; }
     .safety { background:#f0f2e9; border-left:4px solid var(--gold); padding:17px 22px; border-radius:6px; margin-top:24px; }
     @media(max-width:700px) { .product-grid { grid-template-columns:1fr; } .product-card { padding:21px; } }
+
+    /* Version 3: contact-based ordering */
+    .ordering { max-width:900px; margin:0 auto; padding:0 26px 82px; }
+    .ordering h2 { color:var(--forest); font-size:clamp(24px,3.2vw,33px); margin:0 0 16px; }
+    .contact-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:15px; margin:25px 0; }
+    .contact-card { background:var(--paper); border:1px solid #e5e2d7; border-radius:12px; padding:19px 16px; text-align:center; overflow-wrap:anywhere; }
+    .contact-card strong { display:block; color:var(--forest); font-size:18px; }
+    .contact-card a { color:var(--forest); text-decoration:underline; text-underline-offset:3px; }
+    .contact-card small { display:block; color:var(--muted); margin-top:5px; }
+    .order-note { background:#f0f2e9; border-left:4px solid var(--gold); padding:17px 22px; border-radius:6px; }
+    @media(max-width:650px) { .contact-grid { grid-template-columns:1fr; } }
   </style>
 </head>
 <body>
@@ -93,7 +104,7 @@
         <p>เป้าหมายของเราคือการนำเสนอผลิตภัณฑ์เสริมอาหารที่มีคุณภาพ ใช้งานได้จริง และช่วยส่งเสริมสุขภาพและความเป็นอยู่ที่ดีในชีวิตประจำวัน เพื่อให้เป็นส่วนหนึ่งของกิจวัตรเพื่อสุขภาพของคุณ</p>
         <p class="closing">ผ่านกลุ่มแบรนด์ผลิตภัณฑ์ของเราที่กำลังเติบโต เรามุ่งมั่นรักษาคุณภาพและความสม่ำเสมอ เพื่อสร้างความไว้วางใจจากลูกค้าของเรา</p>
       </div>
-      <div class="note">เว็บไซต์ของเราอยู่ระหว่างการพัฒนา ข้อมูลผลิตภัณฑ์และการสั่งซื้อจะเพิ่มเติมในภายหลัง</div>
+      <div class="note">เว็บไซต์ของเราอยู่ระหว่างการพัฒนา สามารถดูวิธีสั่งซื้อและข้อมูลติดต่อได้ด้านล่าง</div>
     </section>
     <section id="english" lang="en" hidden>
       <h2 class="section-title">About ISAN WELLNESS</h2>
@@ -104,7 +115,7 @@
         <p>Our aim is to provide practical, quality nutritional supplements that support everyday health and wellbeing and can become part of your healthy daily routine.</p>
         <p class="closing">Through our growing family of brands, we are committed to quality and consistency, thereby earning the trust of our customers.</p>
       </div>
-      <div class="note">Our website is under development. Product information and ordering will be added later.</div>
+      <div class="note">Our website is under development. Please see the ordering and contact information below.</div>
     </section>
   </main>
   <section class="products" aria-label="GentleDaily product range">
@@ -174,6 +185,31 @@
         <li><strong>การบริโภคประจำวัน:</strong> เริ่มต้นวันละ 1 หน่วยบริโภค และดื่มน้ำให้เพียงพอตลอดวัน</li>
       </ol>
       <p class="safety"><strong>ข้อควรระวัง:</strong> ต้องผสมผงกับน้ำในปริมาณที่เพียงพอเสมอ ห้ามรับประทานผงแห้งโดยไม่ผสมน้ำ</p>
+    </div>
+  </section>
+  <!-- Version 3: bilingual How to Order section -->
+  <section class="ordering" id="how-to-order" aria-label="How to order GentleDaily">
+    <div class="language-content" data-language="en" lang="en" hidden>
+      <h2>How to Order GentleDaily</h2>
+      <p>Ordering GentleDaily is simple. Contact us through LINE, Facebook Messenger or telephone, and we will be happy to assist you.</p>
+      <div class="contact-grid">
+        <div class="contact-card"><strong>LINE</strong><span>LINE ID: Tsuthatta</span><small>Message us to enquire or order</small></div>
+        <div class="contact-card"><strong>Facebook Messenger</strong><span>Effie Kanprom</span><small>Messenger: effie.kanprom</small></div>
+        <div class="contact-card"><strong>Telephone</strong><a href="tel:+66643481476">064 348 1476</a><small>Tap to call</small></div>
+      </div>
+      <p class="order-note">Tell us which GentleDaily product you would like and the quantity required. We will confirm the total price, payment arrangements and delivery details directly with you. Delivery is available throughout Thailand.</p>
+      <p><strong>Email (to be confirmed):</strong> owner@isanwellness.com</p>
+    </div>
+    <div class="language-content" data-language="th" lang="th">
+      <h2>วิธีสั่งซื้อ GentleDaily</h2>
+      <p>สั่งซื้อ GentleDaily ได้ง่าย ๆ เพียงติดต่อเราทาง LINE, Facebook Messenger หรือโทรศัพท์ เรายินดีตอบคำถามและช่วยคุณสั่งซื้อสินค้า</p>
+      <div class="contact-grid">
+        <div class="contact-card"><strong>LINE</strong><span>LINE ID: Tsuthatta</span><small>สอบถามหรือสั่งซื้อทาง LINE</small></div>
+        <div class="contact-card"><strong>Facebook Messenger</strong><span>Effie Kanprom</span><small>Messenger: effie.kanprom</small></div>
+        <div class="contact-card"><strong>โทรศัพท์</strong><a href="tel:+66643481476">064 348 1476</a><small>แตะเพื่อโทร</small></div>
+      </div>
+      <p class="order-note">แจ้งชื่อผลิตภัณฑ์ GentleDaily และจำนวนที่ต้องการ เราจะแจ้งราคารวม วิธีชำระเงิน และรายละเอียดการจัดส่งให้ทราบโดยตรง สามารถจัดส่งได้ทั่วประเทศไทย</p>
+      <p><strong>อีเมล (รอยืนยัน):</strong> owner@isanwellness.com</p>
     </div>
   </section>
   <footer>© <span id="year">2026</span> ISAN WELLNESS · <span>Buriram, Thailand</span></footer>
