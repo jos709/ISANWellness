@@ -64,11 +64,16 @@
     /* Version 3: contact-based ordering */
     .ordering { max-width:900px; margin:0 auto; padding:0 26px 82px; }
     .ordering h2 { color:var(--forest); font-size:clamp(24px,3.2vw,33px); margin:0 0 16px; }
-    .contact-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:15px; margin:25px 0; }
+    .contact-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:15px; margin:25px 0; }
     .contact-card { background:var(--paper); border:1px solid #e5e2d7; border-radius:12px; padding:19px 16px; text-align:center; overflow-wrap:anywhere; }
     .contact-card strong { display:block; color:var(--forest); font-size:18px; }
     .contact-card a { color:var(--forest); text-decoration:underline; text-underline-offset:3px; }
     .contact-card small { display:block; color:var(--muted); margin-top:5px; }
+    .contact-card .contact-icon { display:block; margin:0 auto 9px; width:32px; height:32px; }
+    .contact-card .contact-icon svg { display:block; width:100%; height:100%; }
+    .contact-card .contact-action { display:inline-block; margin-top:8px; font-weight:700; color:#1261ba; text-decoration:underline; text-underline-offset:3px; }
+    .contact-card .contact-action:focus-visible { outline:3px solid #1261ba; outline-offset:4px; }
+    @media(min-width:651px) and (max-width:850px) { .contact-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
     .order-note { background:#f0f2e9; border-left:4px solid var(--gold); padding:17px 22px; border-radius:6px; }
     @media(max-width:650px) { .contact-grid { grid-template-columns:1fr; } }
     .contact-form-position { margin:25px 0 32px; }
@@ -205,11 +210,12 @@
   <section class="ordering" id="how-to-order" aria-label="How to order GentleDaily">
     <div class="language-content" data-language="en" lang="en" hidden>
       <h2>How to Order GentleDaily</h2>
-      <p>Ordering GentleDaily is simple. Contact us through LINE, Facebook Messenger or telephone, and we will be happy to assist you.</p>
+      <p>Ordering GentleDaily is simple. Contact us by telephone, LINE, WhatsApp or Facebook Messenger, and we will be happy to assist you.</p>
       <div class="contact-grid">
-        <div class="contact-card"><strong>LINE</strong><span>LINE ID: Tsuthatta</span><small>Message us to enquire or order</small></div>
-        <div class="contact-card"><strong>Facebook Messenger</strong><span>Effie Kanprom</span><small>Messenger: effie.kanprom</small></div>
-        <div class="contact-card"><strong>Telephone</strong><a href="tel:+66643481476">064 348 1476</a><small>Tap to call</small></div>
+        <div class="contact-card"><span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1674d1" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.5 3a2 2 0 0 1-.6 1.8L7 10.4a16 16 0 0 0 6.6 6.6l1.9-2a2 2 0 0 1 1.8-.6l3 .5a2 2 0 0 1 1.7 2Z"/></svg></span><strong>Telephone</strong><span>064 348 1476</span><a class="contact-action" href="tel:+66643481476">Tap to call</a></div>
+        <div class="contact-card"><span class="contact-icon"><svg viewBox="0 0 24 24" fill="#06c755" aria-hidden="true"><path d="M12 2C6.5 2 2 5.5 2 9.9c0 3.9 3.5 7.1 8.2 7.8.3.1.7.3.6.7l-.2 1.5c0 .4.3.5.6.3 4.7-3.1 10.8-6.5 10.8-10.3C22 5.5 17.5 2 12 2Z"/><text x="12" y="12" fill="white" text-anchor="middle" font-size="5.1" font-family="Arial,sans-serif" font-weight="bold">LINE</text></svg></span><strong>LINE</strong><span>LINE ID: tsuthatta</span><a class="contact-action" href="https://line.me/ti/p/~tsuthatta" target="_blank" rel="noopener noreferrer">Open LINE / Add friend</a></div>
+        <div class="contact-card"><span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 9 9 0 0 1-4-.9L3 21l1.9-5.5a9 9 0 1 1 16.1-4Z"/></svg></span><strong>WhatsApp</strong><span>064 348 1476</span><a class="contact-action" href="https://wa.me/66643481476" target="_blank" rel="noopener noreferrer">Open WhatsApp chat</a></div>
+        <div class="contact-card"><span class="contact-icon"><svg viewBox="0 0 24 24" fill="#1674d1" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.4A10 10 0 1 0 12 2Zm-5.5 13.4 4-4.2 2.7 2.1 4.3-2.1-4 4.2-2.7-2.1-4.3 2.1Z"/></svg></span><strong>Messenger</strong><span>ISAN Wellness</span><a class="contact-action" href="https://www.facebook.com/share/19iAkgvzpW/" target="_blank" rel="noopener noreferrer">Open Page, then tap Message</a></div>
       </div>
       <p class="order-note">Tell us which GentleDaily product you would like and the quantity required. We will confirm the total price, payment arrangements and delivery details directly with you. Delivery is available throughout Thailand.</p>
       <p><strong>Email:</strong> <a href="mailto:info@isanwellness.com">info@isanwellness.com</a></p>
@@ -221,11 +227,12 @@
     </div>
     <div class="language-content" data-language="th" lang="th">
       <h2>วิธีสั่งซื้อ GentleDaily</h2>
-      <p>สั่งซื้อ GentleDaily ได้ง่าย ๆ เพียงติดต่อเราทาง LINE, Facebook Messenger หรือโทรศัพท์ เรายินดีตอบคำถามและช่วยคุณสั่งซื้อสินค้า</p>
+      <p>สั่งซื้อ GentleDaily ได้ง่าย ๆ เพียงติดต่อเราทางโทรศัพท์ LINE WhatsApp หรือ Facebook Messenger เรายินดีตอบคำถามและช่วยคุณสั่งซื้อสินค้า</p>
       <div class="contact-grid">
-        <div class="contact-card"><strong>LINE</strong><span>LINE ID: Tsuthatta</span><small>สอบถามหรือสั่งซื้อทาง LINE</small></div>
-        <div class="contact-card"><strong>Facebook Messenger</strong><span>Effie Kanprom</span><small>Messenger: effie.kanprom</small></div>
-        <div class="contact-card"><strong>โทรศัพท์</strong><a href="tel:+66643481476">064 348 1476</a><small>แตะเพื่อโทร</small></div>
+        <div class="contact-card"><span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1674d1" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.5 3a2 2 0 0 1-.6 1.8L7 10.4a16 16 0 0 0 6.6 6.6l1.9-2a2 2 0 0 1 1.8-.6l3 .5a2 2 0 0 1 1.7 2Z"/></svg></span><strong>โทรศัพท์</strong><span>064 348 1476</span><a class="contact-action" href="tel:+66643481476">แตะเพื่อโทร</a></div>
+        <div class="contact-card"><span class="contact-icon"><svg viewBox="0 0 24 24" fill="#06c755" aria-hidden="true"><path d="M12 2C6.5 2 2 5.5 2 9.9c0 3.9 3.5 7.1 8.2 7.8.3.1.7.3.6.7l-.2 1.5c0 .4.3.5.6.3 4.7-3.1 10.8-6.5 10.8-10.3C22 5.5 17.5 2 12 2Z"/><text x="12" y="12" fill="white" text-anchor="middle" font-size="5.1" font-family="Arial,sans-serif" font-weight="bold">LINE</text></svg></span><strong>LINE</strong><span>LINE ID: tsuthatta</span><a class="contact-action" href="https://line.me/ti/p/~tsuthatta" target="_blank" rel="noopener noreferrer">เปิด LINE / เพิ่มเพื่อน</a></div>
+        <div class="contact-card"><span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 9 9 0 0 1-4-.9L3 21l1.9-5.5a9 9 0 1 1 16.1-4Z"/></svg></span><strong>WhatsApp</strong><span>064 348 1476</span><a class="contact-action" href="https://wa.me/66643481476" target="_blank" rel="noopener noreferrer">เปิดแชต WhatsApp</a></div>
+        <div class="contact-card"><span class="contact-icon"><svg viewBox="0 0 24 24" fill="#1674d1" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.4A10 10 0 1 0 12 2Zm-5.5 13.4 4-4.2 2.7 2.1 4.3-2.1-4 4.2-2.7-2.1-4.3 2.1Z"/></svg></span><strong>Messenger</strong><span>ISAN Wellness</span><a class="contact-action" href="https://www.facebook.com/share/19iAkgvzpW/" target="_blank" rel="noopener noreferrer">เปิดเพจ แล้วแตะ ส่งข้อความ</a></div>
       </div>
       <p class="order-note">แจ้งชื่อผลิตภัณฑ์ GentleDaily และจำนวนที่ต้องการ เราจะแจ้งราคารวม วิธีชำระเงิน และรายละเอียดการจัดส่งให้ทราบโดยตรง สามารถจัดส่งได้ทั่วประเทศไทย</p>
       <p><strong>อีเมล:</strong> <a href="mailto:info@isanwellness.com">info@isanwellness.com</a></p>
