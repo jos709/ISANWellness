@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="th" translate="no">
 <head>
   <meta charset="UTF-8">
+  <meta name="google" content="notranslate">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="ISAN WELLNESS — nutritional supplements inspired by nature, thoughtfully developed in Buriram, Thailand.">
   <title>ISAN WELLNESS | Healthy Living Inspired by Nature</title>
@@ -70,6 +71,21 @@
     .contact-card small { display:block; color:var(--muted); margin-top:5px; }
     .order-note { background:#f0f2e9; border-left:4px solid var(--gold); padding:17px 22px; border-radius:6px; }
     @media(max-width:650px) { .contact-grid { grid-template-columns:1fr; } }
+    .contact-form-position { margin:25px 0 32px; }
+    .contact-launch, .contact-submit { background:var(--forest); color:white; border:0; border-radius:9px; padding:12px 24px; font:inherit; font-weight:650; cursor:pointer; }
+    .contact-launch:hover, .contact-submit:hover { background:var(--deep); }
+    .contact-dialog { width:min(94vw,530px); max-height:90vh; overflow:auto; border:1px solid #d9dfd4; border-radius:15px; padding:26px; color:var(--ink); background:var(--paper); box-shadow:0 18px 55px #0004; }
+    .contact-dialog::backdrop { background:#152c24a8; }
+    .contact-dialog h2 { margin:0 30px 18px 0; color:var(--forest); }
+    .contact-dialog label { display:block; margin:12px 0 4px; font-weight:650; }
+    .contact-dialog input:not([type=hidden]), .contact-dialog textarea { width:100%; padding:10px 12px; font:inherit; border:1px solid #aebbb0; border-radius:7px; line-height:1.4; }
+    .contact-dialog textarea { min-height:115px; resize:vertical; }
+    .contact-close { position:absolute; right:16px; top:12px; border:0; background:transparent; font-size:29px; cursor:pointer; color:var(--forest); }
+    .contact-actions { display:flex; gap:12px; align-items:center; margin-top:18px; flex-wrap:wrap; }
+    .contact-cancel { border:1px solid #bdc8bd; background:white; border-radius:9px; padding:11px 18px; font:inherit; cursor:pointer; }
+    .contact-dialog .form-note { color:var(--muted); font-size:13px; margin-top:13px; line-height:1.5; }
+    .company-background { margin-top:25px; }
+
   </style>
 </head>
 <body>
@@ -196,9 +212,8 @@
         <div class="contact-card"><strong>Telephone</strong><a href="tel:+66643481476">064 348 1476</a><small>Tap to call</small></div>
       </div>
       <p class="order-note">Tell us which GentleDaily product you would like and the quantity required. We will confirm the total price, payment arrangements and delivery details directly with you. Delivery is available throughout Thailand.</p>
-      <p><strong>Email (to be confirmed):</strong> owner@isanwellness.com</p>
-      <!-- Reserved position: future pop-up Contact Us form button -->
-      <div class="contact-form-position" aria-label="Contact form position"></div>
+      <p><strong>Email:</strong> <a href="mailto:info@isanwellness.com">info@isanwellness.com</a></p>
+      <div class="contact-form-position"><button type="button" class="contact-launch" onclick="openContact('en')">Contact Us</button></div>
       <div class="company-background">
           <p>Our approach is founded on nutritional knowledge, systematic product development, precise formulation and documented quality-control procedures.</p>
           <p>Our aim is to provide practical, quality nutritional supplements that support everyday health and wellbeing and can become part of your healthy daily routine.</p>
@@ -213,17 +228,51 @@
         <div class="contact-card"><strong>โทรศัพท์</strong><a href="tel:+66643481476">064 348 1476</a><small>แตะเพื่อโทร</small></div>
       </div>
       <p class="order-note">แจ้งชื่อผลิตภัณฑ์ GentleDaily และจำนวนที่ต้องการ เราจะแจ้งราคารวม วิธีชำระเงิน และรายละเอียดการจัดส่งให้ทราบโดยตรง สามารถจัดส่งได้ทั่วประเทศไทย</p>
-      <p><strong>อีเมล (รอยืนยัน):</strong> owner@isanwellness.com</p>
-      <!-- Reserved position: future pop-up Contact Us form button -->
-      <div class="contact-form-position" aria-label="Contact form position"></div>
+      <p><strong>อีเมล:</strong> <a href="mailto:info@isanwellness.com">info@isanwellness.com</a></p>
+      <div class="contact-form-position"><button type="button" class="contact-launch" onclick="openContact('th')">ติดต่อเรา</button></div>
       <div class="company-background">
           <p>แนวทางของเราตั้งอยู่บนพื้นฐานของความรู้ด้านโภชนาการ การพัฒนาผลิตภัณฑ์อย่างเป็นระบบ การกำหนดสูตรอย่างแม่นยำ และขั้นตอนการควบคุมคุณภาพที่มีการจัดทำเป็นเอกสาร</p>
           <p>เป้าหมายของเราคือการนำเสนอผลิตภัณฑ์เสริมอาหารที่มีคุณภาพ ใช้งานได้จริง และช่วยส่งเสริมสุขภาพและความเป็นอยู่ที่ดีในชีวิตประจำวัน เพื่อให้เป็นส่วนหนึ่งของกิจวัตรเพื่อสุขภาพของคุณ</p>
       </div>
     </div>
   </section>
+  <dialog id="contact-dialog" class="contact-dialog" aria-labelledby="contact-title" onclick="if(event.target===this)this.close()">
+    <button type="button" class="contact-close" aria-label="Close" onclick="document.getElementById('contact-dialog').close()">×</button>
+    <h2 id="contact-title">Contact Us</h2>
+    <form id="contact-form" action="https://formsubmit.co/info@isanwellness.com" method="POST" accept-charset="UTF-8">
+      <input type="hidden" name="_subject" value="ISAN WELLNESS website enquiry">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label id="contact-name-label" for="contact-name">Name</label>
+      <input id="contact-name" name="name" autocomplete="name" maxlength="120" required>
+      <label id="contact-email-label" for="contact-email">Email address</label>
+      <input id="contact-email" name="email" type="email" autocomplete="email" maxlength="200" required>
+      <label id="contact-subject-label" for="contact-subject">Subject</label>
+      <input id="contact-subject" name="subject" maxlength="160" required>
+      <label id="contact-message-label" for="contact-message">Message</label>
+      <textarea id="contact-message" name="message" maxlength="5000" required></textarea>
+      <div class="contact-actions">
+        <button id="contact-send" class="contact-submit" type="submit">Send Message</button>
+        <button id="contact-cancel" class="contact-cancel" type="button" onclick="document.getElementById('contact-dialog').close()">Cancel</button>
+      </div>
+      <p id="contact-note" class="form-note">Submitting opens our secure form service. On first use, ISAN WELLNESS may need to activate delivery by email.</p>
+    </form>
+  </dialog>
   <footer>© <span id="year">2026</span> ISAN WELLNESS · <span>Buriram, Thailand</span></footer>
   <script>
+    function openContact(lang) {
+      const th = lang === 'th';
+      const labels = th
+        ? ['ติดต่อเรา','ชื่อ','อีเมล','หัวข้อ','ข้อความ','ส่งข้อความ','ยกเลิก','เมื่อส่งแบบฟอร์ม ระบบจะเปิดบริการรับข้อความที่ปลอดภัย การใช้งานครั้งแรกอาจต้องยืนยันอีเมลเพื่อเปิดรับข้อความ']
+        : ['Contact Us','Name','Email address','Subject','Message','Send Message','Cancel','Submitting opens our secure form service. On first use, ISAN WELLNESS may need to activate delivery by email.'];
+      const ids = ['contact-title','contact-name-label','contact-email-label','contact-subject-label','contact-message-label','contact-send','contact-cancel','contact-note'];
+      ids.forEach((id,i) => document.getElementById(id).textContent = labels[i]);
+      const dialog = document.getElementById('contact-dialog');
+      dialog.lang = lang;
+      dialog.showModal();
+      document.getElementById('contact-name').focus();
+    }
     function setLanguage(lang) {
       document.getElementById('hero-thai-name').hidden = lang !== 'th';
       const heroTagline = document.getElementById('hero-tagline');
