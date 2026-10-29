@@ -239,11 +239,11 @@
   <dialog id="contact-dialog" class="contact-dialog" aria-labelledby="contact-title" onclick="if(event.target===this)this.close()">
     <button type="button" class="contact-close" aria-label="Close" onclick="document.getElementById('contact-dialog').close()">×</button>
     <h2 id="contact-title">Contact Us</h2>
-    <form id="contact-form" action="https://formsubmit.co/info@isanwellness.com" method="POST" accept-charset="UTF-8">
-      <input type="hidden" name="_subject" value="ISAN WELLNESS website enquiry">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="true">
-      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" accept-charset="UTF-8">
+      <input type="hidden" name="access_key" value="404ca088-4923-405f-a5f2-04ee94ca5edf">
+      <input type="hidden" name="from_name" value="ISAN WELLNESS Website">
+      <input type="hidden" name="form_subject" value="ISAN WELLNESS website enquiry">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
       <label id="contact-name-label" for="contact-name">Name</label>
       <input id="contact-name" name="name" autocomplete="name" maxlength="120" required>
       <label id="contact-email-label" for="contact-email">Email address</label>
@@ -256,7 +256,7 @@
         <button id="contact-send" class="contact-submit" type="submit">Send Message</button>
         <button id="contact-cancel" class="contact-cancel" type="button" onclick="document.getElementById('contact-dialog').close()">Cancel</button>
       </div>
-      <p id="contact-note" class="form-note">Submitting opens our secure form service. On first use, ISAN WELLNESS may need to activate delivery by email.</p>
+      <p id="contact-note" class="form-note">Your message will be submitted securely to ISAN WELLNESS.</p>
     </form>
   </dialog>
   <footer>© <span id="year">2026</span> ISAN WELLNESS · <span>Buriram, Thailand</span></footer>
@@ -264,8 +264,8 @@
     function openContact(lang) {
       const th = lang === 'th';
       const labels = th
-        ? ['ติดต่อเรา','ชื่อ','อีเมล','หัวข้อ','ข้อความ','ส่งข้อความ','ยกเลิก','เมื่อส่งแบบฟอร์ม ระบบจะเปิดบริการรับข้อความที่ปลอดภัย การใช้งานครั้งแรกอาจต้องยืนยันอีเมลเพื่อเปิดรับข้อความ']
-        : ['Contact Us','Name','Email address','Subject','Message','Send Message','Cancel','Submitting opens our secure form service. On first use, ISAN WELLNESS may need to activate delivery by email.'];
+        ? ['ติดต่อเรา','ชื่อ','อีเมล','หัวข้อ','ข้อความ','ส่งข้อความ','ยกเลิก','ข้อความของคุณจะถูกส่งถึง ISAN WELLNESS ผ่านระบบรับข้อความที่ปลอดภัย']
+        : ['Contact Us','Name','Email address','Subject','Message','Send Message','Cancel','Your message will be submitted securely to ISAN WELLNESS.'];
       const ids = ['contact-title','contact-name-label','contact-email-label','contact-subject-label','contact-message-label','contact-send','contact-cancel','contact-note'];
       ids.forEach((id,i) => document.getElementById(id).textContent = labels[i]);
       const dialog = document.getElementById('contact-dialog');
